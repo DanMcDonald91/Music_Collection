@@ -30,6 +30,12 @@ def self.all
    return album.map { |album| Album.new(album) }
   end
 
+  def update()
+    db = PG.connect({dbname: 'music_collection' , host: 'localhost'})
+    sql = "UPDATE album SET (title, genre, artist_id) = '#{@genre}', #{@artist_id}) WHERE id = #{@id};"
+  end
+
+
 
 
 end

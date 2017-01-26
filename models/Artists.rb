@@ -28,6 +28,12 @@ class Artist
    return artist.map { |artist| Artist.new(artist) }
   end
 
+  def update()
+
+    db = PG.connect({dbname: 'music_collection' , host: 'localhost'})
+    sql = "UPDATE artists SET (name) = '#{@name}') WHERE id = #{@id};"
+  end
+
 end
 
 
